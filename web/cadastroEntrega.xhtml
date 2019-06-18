@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+      >
+    
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="resources/css/cssTadsDelivery.css"/>
+    <link rel="stylesheet" href="resources/css/cssTadsDelivery2.css"/>
+    <title>TADS - Sistema de Entregas</title>
+</h:head>
+
+<h:body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-sm-4 sidebar1" style="height: 100vh">
+                <div class="logo">
+                    <img src="resources/images/user.png" class="img-responsive center-block" alt="Logo"/>
+                </div>
+                <br/>
+                <div class="left-navigation">
+                    <ul class="list">
+                        <h5><strong>Nome Colaborador</strong></h5>
+                        <li><a href="visualizarPedidoColaborador.xhtml">Entregas Pendentes &nbsp;<i class="fa fa-truck" aria-hidden="true"></i></a>
+                        </li>
+
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Visualizar Entregas &nbsp;<i class="fa fa-eye" aria-hidden="true"></i></a>
+                            <div class="dropdown-content">
+                                <a href="visualizarEntregas.xhtml">Visualizar Todas</a>
+                                <a href="visualizarCanceladas.xhtml">Canceladas</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="javascript:void(0)" class="dropbtn">Cadastrar &nbsp;<i class="fa fa-users" aria-hidden="true"></i></a>
+                            <div class="dropdown-content">
+                                <a href="cadastrar.xhtml">Funcionários</a>
+                                <a href="cadastroEntrega.xhtml">Entregas</a>
+                            </div>
+                        </li>
+                        <li><a href="loginEntrega.xhtml">Sair &nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-4">
+                <div class="dados-header">
+                    <h:form class="form-horizontal">
+                        <fieldset>
+                          <legend>Cadastro de entregas</legend>
+                          <div class="form-group" style="margin-left: 1px; margin-top: 6px;">
+                                <label class="col-md-4 control-label" for="inputData">Data da entrega:</label>
+                                <h:inputText required="true" id="inputData" styleClass="form-control inputTexto" class="dataEntrega" value="#{EntregaController.entrega.dataEntrega}">
+                                    <f:convertDateTime pattern="dd/MM/yyyy"/> 
+                                </h:inputText>                                
+                            </div>
+                            <div class="form-group" style="margin-left: 6px;">
+                                <label class="col-md-4 control-label" for="inputEndereco">Endereço:</label>
+                                <h:inputText required="true" id="inputEndereco" styleClass="form-control inputTexto" value="#{EntregaController.entrega.enderecoEntrega}">
+                                    <f:passThroughAttribute name="placeholder" value="Endereço" />
+                                </h:inputText>                                 
+                            </div>
+                            <div class="form-group" style="margin-left: 316px;">
+                                <label class="col-md-4 control-label" for="inputDestinatario">Destinatário:</label>
+                                <h:inputText required="true" id="inputDestinatario" styleClass="form-control inputTexto" value="#{EntregaController.entrega.destinatario}">
+                                    <f:passThroughAttribute name="placeholder" value="Destinatário" />
+                                </h:inputText>                                 
+                            </div>
+                            <div class="form-group" style="margin-left: 320px;">
+                                <label class="col-md-4 control-label" for="inputDescricao">Descrição:</label>
+                                <h:inputText required="true" id="inputDescricao" styleClass="form-control inputTexto" value="#{EntregaController.entrega.descricao}">
+                                    <f:passThroughAttribute name="placeholder" value="Descrição" />
+                                </h:inputText>                                 
+                            </div>
+                            <div class="form-group" style="margin-left: 320px;">
+                                <label class="col-md-4 control-label" for="inputValor">Valor:</label>
+                                <h:inputText required="true" id="inputValor" styleClass="form-control inputTexto" value="#{EntregaController.entrega.valor}">
+                                    <f:passThroughAttribute name="placeholder" value="Valor" />
+                                </h:inputText>                                 
+                            </div>  
+                        </fieldset>
+                        <br/>
+                        <h:commandButton class="btn btn-md btn-success botao pull-right" value="Salvar" action="#{EntregaController.cadastrarEntrega()}"></h:commandButton>       
+                    </h:form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+            $(document).ready(function () { 
+                $(".dataEntrega").mask("99/99/9999");
+            });
+    </script>  
+  </h:body>
+</html>

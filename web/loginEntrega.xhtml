@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Login</title>
+	<meta charset="utf-8" />
+	<link type="text/css" rel="stylesheet" href="resources/css/login.css" />
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+	<link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"/>
+
+</h:head>
+
+<h:body>
+	<nav class="navbar navbar-expand-md navbar-dark" style="background-color: rgb(238, 47, 63); height: 55px;">
+		<div class="container">
+			<a class="navbar-brand m-0" href="tadsDelivery.xhtml">
+        <img src="resources/images/logoTads.png" height="65" width="133" style="margin-top:13px"/> </a>
+			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+			<div class="collapse navbar-collapse text-center justify-content-end" id="navbar2SupportedContent">
+				<a href="tadsDelivery.xhtml" class="btn navbar-btn ml-2 btn-light" style="background-color:white; color:#f07781"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="content">
+		<div class="logo">
+			<img src="resources/images/delivery-logo.png" class="logo-laundry"/>
+		</div>
+		<div class="login">
+
+			<h:form class="formulario">
+				<div class="nome-logo">TADS - Sistema de Entregas</div>
+				<div class="user">
+					<i class="fa fa-address-card" aria-hidden="true"></i>
+
+                                        <h:inputText class="input" value="#{loginMB.funcionario.login}">
+                                            <f:passThroughAttribute name="placeholder" value="Login"></f:passThroughAttribute>
+                                        </h:inputText>
+				</div>
+
+				<div class="senha">
+					<i class="fa fa-lock" aria-hidden="true"></i>
+					<h:inputSecret required="required" value="#{loginMB.funcionario.senha}" class="input">
+                                            <f:passThroughAttribute name="placeholder" value="Senha"></f:passThroughAttribute>
+                                        </h:inputSecret> 
+				</div>
+                                
+                                <h:commandButton class="botao" value="Entrar" style="background-color:#f07781" action="#{loginMB.autenticar}"></h:commandButton>
+				<br/>
+				<div class="linksenha">
+					<p>Para recuperar a senha entre em contato com o administrador.</p>
+				</div>
+			</h:form>
+		</div>
+	</div>
+
+</h:body>
+
+</html>

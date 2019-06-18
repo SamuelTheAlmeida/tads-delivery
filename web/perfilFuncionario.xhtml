@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    >
+
+<h:head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css"/>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="resources/css/cssTadsDelivery.css"/>
+    <title>TADS - Sistema de Entregas</title>
+</h:head>
+
+<h:body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2 col-sm-4 sidebar1">
+        <div class="logo">
+          <img src="img/user.png" class="img-responsive center-block" alt="Logo">
+        </div>
+        <br>
+        <div class="left-navigation">
+            <ul class="list">
+                <h5><strong>Nome Colaborador</strong></h5>
+                <li class="active-menu">Perfil &nbsp;<i class="fa fa-truck" aria-hidden="true"></i>
+                </li>
+                <li><a href="visualizarPedidoColaborador.html">Minhas entregas &nbsp;<i class="fa fa-truck" aria-hidden="true"></i></a>
+                </li>
+                <li><a href="entregasDisponiveis.html">Entregas disponíveis &nbsp;<i class="fa fa-truck" aria-hidden="true"></i>                
+                </li>                        
+                <li><a href="loginEntrega.html">Sair &nbsp;<i class="fa fa-sign-out" aria-hidden="true"></i></a>
+                </li>
+            </ul>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4">
+        <div class="dados-header">
+            <h:form class="form-horizontal">
+              <fieldset>
+                <legend>Dados Pessoais</legend>
+                <div class="form-group" style="float:right;width:600px">
+                  <label class="col-md-4 control-label" for="cpf">CPF:</label>
+                  <div class="col-md-4">
+                    <input id="cep" name="cpf" type="text" placeholder="CPF" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="nome">Nome Completo:</label>
+                  <div class="col-md-4">
+                    <input id="nome" name="nome" type="text" placeholder="Nome" class="form-control input-md">
+                  </div>
+                </div>                
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="email">E-mail:</label>
+                  <div class="col-md-4">
+                    <input id="email" name="email" type="email" placeholder="E-mail" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="telefone">Telefone:</label>
+                  <div class="col-md-4">
+                    <input id="telefone" name="telefone" type="tel" placeholder="Telefone" class="form-control input-md">
+                  </div>
+                </div>
+              </fieldset>
+            </h:form>
+            <h:form class="form-horizontal">
+              <fieldset>
+                <legend>Endereço</legend>
+                <div class="form-group" style="float:right;width:600px">
+                  <label class="col-md-4 control-label" for="logradouro">Logradouro:</label>
+                  <div class="col-md-4">
+                    <input id="logradouro" name="logradouro" type="text" placeholder="Logradouro" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="CEP">CEP:</label>
+                  <div class="col-md-4">
+                    <input id="CEP" name="CEP" type="text" placeholder="CEP" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group" style="float:right;width:600px;">
+                  <label class="col-md-4 control-label" for="numeroEnd">Número:</label>
+                  <div class="col-md-4">
+                    <input id="numeroEnd" name="numeroEnd" type="number" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="bairro">Bairro:</label>
+                  <div class="col-md-4">
+                    <input id="bairro" name="bairro" type="text" placeholder="Bairro" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="complementoEnd">Complemento:</label>
+                  <div class="col-md-4">
+                    <input id="complementoEnd" name="complementoEnd" type="text" placeholder="Complemento" class="form-control input-md">
+                  </div>
+                </div>
+              </fieldset>
+            </h:form>
+            <h:form class="form-horizontal">
+              <fieldset>
+                <legend>Dados do perfil</legend>
+                <div class="form-group" style="float:right;width:600px">
+                  <label class="col-md-4 control-label" for="logradouro">Senha:</label>
+                  <div class="col-md-4">
+                    <input id="logradouro" name="logradouro" type="text" placeholder="Logradouro" class="form-control input-md">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="CEP">Confirmar senha:</label>
+                  <div class="col-md-4">
+                    <input id="CEP" name="CEP" type="text" placeholder="CEP" class="form-control input-md">
+                  </div>
+                </div>                
+              </fieldset>
+            </h:form>
+            <button type="button" class="btnSalvar btnGeral" name="button">Salvar</button>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</h:body>
+</html>
